@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-body bg-base-50;
+}
+
+.attribution {
+  @apply text-[11px] text-center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ------------------------------------------ */
+.img-comp-img.img-comp-overlay {
+  @apply top-0 left-0 absolute w-auto h-auto overflow-hidden text-left;
+}
+
+.img-comp-img img {
+  @apply block h-screen w-screen max-w-none left-0;
+}
+/* ------------------------------------------ */
