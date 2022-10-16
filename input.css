@@ -3,11 +3,53 @@
 @tailwind utilities;
 
 body {
-  @apply font-body bg-base-50;
+  @apply font-body bg-base-50 text-base-200 mx-auto max-w-[400px];
+}
+
+header {
+  @apply mt-[84px] font-extralight text-center px-8 mb-12;
+}
+
+header h1 {
+  @apply text-[24px] leading-9;
+}
+
+header span {
+  @apply font-semibold;
+}
+
+header p {
+  @apply mt-[17px] text-[15px] font-normal leading-6 text-base-100;
+}
+
+main {
+  @apply w-full px-[32px] flex flex-col gap-6 py-7 mb-[49px];
+}
+
+.feature {
+  box-shadow: 0px 20px 10px 10px hsla(234, 12%, 34%, 0.05), 0px 20px 10px -10px hsla(234, 98%, 34%, 0.1);
+  @apply relative bg-base-50 rounded-lg px-7 pt-7 pb-6 overflow-hidden;
+}
+
+.feature::before {
+  content: "teststset";
+  @apply h-1 w-full absolute top-0 left-0;
+}
+
+.feature h2 {
+  @apply font-bold text-xl;
+}
+
+.feature p {
+  @apply text-[13px] mt-[4px] text-base-100 leading-[22px];
+}
+
+.feature img {
+  @apply block ml-auto mt-[26.5px] mb-[4px] scale-[.9] origin-bottom-right;
 }
 
 .attribution {
-  @apply text-[11px] text-center;
+  @apply absolute left-0 bottom-2 block w-screen text-xs mx-auto text-[11px] text-center;
 }
 
 .attribution a {
