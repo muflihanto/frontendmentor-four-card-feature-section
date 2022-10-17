@@ -551,10 +551,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+html {
+  position: relative;
+}
+
 body {
   margin-left: auto;
   margin-right: auto;
-  max-width: 400px;
+  width: 100vw;
   --tw-bg-opacity: 1;
   background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
   font-family: Poppins, sans-serif;
@@ -563,17 +567,52 @@ body {
 }
 
 header {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 84px;
   margin-bottom: 3rem;
+  max-width: 400px;
   padding-left: 2rem;
   padding-right: 2rem;
   text-align: center;
   font-weight: 200;
 }
 
+@media (min-width: 768px) {
+  header {
+    margin-top: 82px;
+    margin-bottom: 40px;
+    max-width: 540px;
+    letter-spacing: 0.01rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  header {
+    margin-top: 80px;
+    margin-bottom: 35px;
+    max-width: 600px;
+    letter-spacing: 0.015rem;
+  }
+}
+
 header h1 {
   font-size: 24px;
   line-height: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  header h1 {
+    font-size: 36px;
+    line-height: 51px;
+  }
 }
 
 header span {
@@ -589,10 +628,28 @@ header p {
   color: hsl(229 6% 66% / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+  header p {
+    line-height: 25px;
+    letter-spacing: 0.0025rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  header p {
+    margin-top: 15px;
+    line-height: 26px;
+    letter-spacing: 0.005rem;
+  }
+}
+
 main {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 49px;
   display: flex;
   width: 100%;
+  max-width: 400px;
   flex-direction: column;
   gap: 1.5rem;
   padding-left: 32px;
@@ -601,21 +658,56 @@ main {
   padding-bottom: 1.75rem;
 }
 
+@media (min-width: 768px) {
+  main {
+    margin-left: calc((100vw - 696px) / 2 - 32px);
+    max-height: 540px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    margin-left: calc((100vw - 1110px) / 2 - 32px);
+    max-height: 725px;
+    gap: 30px;
+  }
+}
+
 .feature {
   box-shadow: 0px 20px 10px 10px hsla(234, 12%, 34%, 0.05), 0px 20px 10px -10px hsla(234, 98%, 34%, 0.1);
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 1.75rem;
   padding-right: 1.75rem;
   padding-top: 1.75rem;
   padding-bottom: 1.5rem;
 }
 
+@media (min-width: 1280px) {
+  .feature {
+    width: 350px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+
+  .feature:first-child {
+    margin-top: 140px;
+    margin-bottom: 140px;
+  }
+
+  .feature:last-child {
+    margin-top: 140px;
+    margin-bottom: 140px;
+  }
+}
+
 .feature::before {
-  content: "teststset";
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -637,6 +729,12 @@ main {
   color: hsl(229 6% 66% / var(--tw-text-opacity));
 }
 
+@media (min-width: 1280px) {
+  .feature p {
+    margin-top: 10px;
+  }
+}
+
 .feature img {
   margin-left: auto;
   margin-top: 26.5px;
@@ -646,6 +744,16 @@ main {
   --tw-scale-x: .9;
   --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 1280px) {
+  .feature img {
+    margin-top: 40px;
+    margin-bottom: 8px;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
 
 .attribution {
@@ -660,33 +768,17 @@ main {
   font-size: 0.75rem;
   line-height: 1rem;
   font-size: 11px;
+  font-weight: 600;
+}
+
+.attribution a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
-/* ------------------------------------------ */
-
-.img-comp-img.img-comp-overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: auto;
-  width: auto;
-  overflow: hidden;
-  text-align: left;
-}
-
-.img-comp-img img {
-  left: 0px;
-  display: block;
-  height: 100vh;
-  width: 100vw;
-  max-width: none;
-}
-
-/* ------------------------------------------ */
 
 .before\:bg-primary-cyan::before {
   content: var(--tw-content);

@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply relative;
+}
+
 body {
-  @apply font-body bg-base-50 text-base-200 mx-auto max-w-[400px];
+  @apply font-body bg-base-50 text-base-200 mx-auto w-screen;
 }
 
 header {
-  @apply mt-[84px] font-extralight text-center px-8 mb-12;
+  @apply mt-[84px] font-extralight text-center px-8 mb-12 max-w-[400px] mx-auto md:mt-[82px] md:max-w-[540px] md:tracking-[0.01rem] md:mb-[40px] xl:mt-[80px] xl:max-w-[600px] xl:tracking-[0.015rem] xl:mb-[35px];
 }
 
 header h1 {
-  @apply text-[24px] leading-9;
+  @apply text-[24px] leading-9 md:text-[30px] md:leading-[40px] xl:text-[36px] xl:leading-[51px];
 }
 
 header span {
@@ -19,20 +23,20 @@ header span {
 }
 
 header p {
-  @apply mt-[17px] text-[15px] font-normal leading-6 text-base-100;
+  @apply mt-[17px] text-[15px] font-normal leading-6 text-base-100 md:tracking-[0.0025rem] md:leading-[25px] xl:tracking-[0.005rem] xl:leading-[26px] xl:mt-[15px];
 }
 
 main {
-  @apply w-full px-[32px] flex flex-col gap-6 py-7 mb-[49px];
+  @apply w-full px-[32px] flex flex-col gap-6 xl:gap-[30px] py-7 mb-[49px] max-w-[400px] mx-auto md:flex-wrap md:max-h-[540px] md:ml-[calc((100vw-696px)/2-32px)] xl:ml-[calc((100vw-1110px)/2-32px)] xl:max-h-[725px];
 }
 
 .feature {
   box-shadow: 0px 20px 10px 10px hsla(234, 12%, 34%, 0.05), 0px 20px 10px -10px hsla(234, 98%, 34%, 0.1);
-  @apply relative bg-base-50 rounded-lg px-7 pt-7 pb-6 overflow-hidden;
+  @apply relative bg-white rounded-lg px-7 pt-7 pb-6 overflow-hidden xl:last:my-[140px] xl:first:my-[140px] xl:w-[350px] xl:px-8 xl:pt-8;
 }
 
 .feature::before {
-  content: "teststset";
+  content: "";
   @apply h-1 w-full absolute top-0 left-0;
 }
 
@@ -41,27 +45,18 @@ main {
 }
 
 .feature p {
-  @apply text-[13px] mt-[4px] text-base-100 leading-[22px];
+  @apply text-[13px] mt-[4px] text-base-100 leading-[22px] xl:mt-[10px];
 }
 
 .feature img {
-  @apply block ml-auto mt-[26.5px] mb-[4px] scale-[.9] origin-bottom-right;
+  @apply block ml-auto mt-[26.5px] mb-[4px] scale-[.9] xl:scale-100 origin-bottom-right xl:mt-[40px] xl:mb-[8px];
 }
 
 .attribution {
-  @apply absolute left-0 bottom-2 block w-screen text-xs mx-auto text-[11px] text-center;
+  @apply font-semibold absolute left-0 bottom-2 block w-screen text-xs mx-auto text-[11px] text-center;
 }
 
 .attribution a {
+  @apply hover:underline;
   color: hsl(228, 45%, 44%);
 }
-
-/* ------------------------------------------ */
-.img-comp-img.img-comp-overlay {
-  @apply top-0 left-0 absolute w-auto h-auto overflow-hidden text-left;
-}
-
-.img-comp-img img {
-  @apply block h-screen w-screen max-w-none left-0;
-}
-/* ------------------------------------------ */
